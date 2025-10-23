@@ -1,0 +1,59 @@
+# ----------------------------------------------------------------------
+# 1. TERRAFORM SPECIFIC FILES
+# ----------------------------------------------------------------------
+
+# Terraform state files (DO NOT COMMIT)
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+
+# Temporary files and directories
+.terraform/*
+.terraform.lock.hcl
+
+# Local configuration files
+override.tf
+override_*.tf
+*_override.tf
+*_override_*.tf
+
+# Crash log files
+crash.log
+
+# CLI configuration and metadata
+.tflint.hcl
+.tflintcache/
+.session-credentials
+.terraformrc
+
+# ----------------------------------------------------------------------
+# 2. KUBERNETES / AWS CONFIGURATION
+# ----------------------------------------------------------------------
+
+# kubeconfig files (often contain sensitive access tokens/paths)
+*.kubeconfig
+.kube/config
+
+# Local secrets/credentials files
+secrets.yaml
+creds.json
+
+# ----------------------------------------------------------------------
+# 3. COMMON OS AND EDITOR FILES
+# ----------------------------------------------------------------------
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Visual Studio Code
+.vscode/
+
+# ----------------------------------------------------------------------
+# 4. REMOVE THE EMBEDDED REPOS (Optional but highly recommended)
+# ----------------------------------------------------------------------
+# These lines specifically prevent the large module folders from being added.
+.terraform/modules/

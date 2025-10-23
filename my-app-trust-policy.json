@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::266735810620:oidc-provider/oidc.eks.ap-south-1.amazonaws.com/id/FB3460EBEB5960BAFE11B7409546612D"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "oidc.eks.ap-south-1.amazonaws.com/id/FB3460EBEB5960BAFE11B7409546612D:aud": "sts.amazonaws.com",
+          "oidc.eks.ap-south-1.amazonaws.com/id/FB3460EBEB5960BAFE11B7409546612D:sub": "system:serviceaccount:default:my-app-sa"
+        }
+      }
+    }
+  ]
+}

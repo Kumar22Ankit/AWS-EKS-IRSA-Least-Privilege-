@@ -1,0 +1,27 @@
+# my-app-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: s3-reader-app
+  labels:
+    app: s3-reader
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: s3-reader
+  template:
+    metadata:
+      labels:
+        app: s3-reader
+    spec:
+      # 🚨 THE CRITICAL LINK: This line connects your Pod to the Service Account
+      # and, by extension, to the AWS IAM Role (MyLeastPrivilegeS3Role).
+      serviceAccountName: my-app-sa 
+      containers:
+      - name: app-container
+        # 💡 IMPORTANT: Replace this with the actual image of your application.
+        # This application must use an AWS SDK to interact with S3.
+        image: ankit22kumar/coffee-shop
+        ports:
+        - containerPort: 8080
