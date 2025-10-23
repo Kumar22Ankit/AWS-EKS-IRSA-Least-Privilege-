@@ -8,6 +8,8 @@ This document also serves as a professional record of resolving the common "Forb
 
 ---
 
+![alt text](image.png)
+
 ## 🚀 Prerequisites
 
 To successfully execute this demonstration, the following resources and tools must be accessible and configured:
