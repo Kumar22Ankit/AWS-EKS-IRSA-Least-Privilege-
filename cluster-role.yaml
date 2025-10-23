@@ -1,10 +1,10 @@
-# 1. cluster-role.yaml
+
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: demo-admin-role
 rules:
-# Grants full access to all resources cluster-wide
+
 - apiGroups: ["*"]
   resources: ["*"]
   verbs: ["*"]
